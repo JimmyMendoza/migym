@@ -18,4 +18,7 @@ echo "conexion exitosa!!!";
 }
 /*$conectar->close(); 
 la conexion debe permanecer abierta para las opciones de index.html*/
+
+
+# comentario
 ?>
