@@ -1,6 +1,6 @@
 <?php
   require 'Conexion.php';
-  $sql = "SELECT d.nombre, d.tipo, p.nombre, p.a_paterno, h.dia, h.hora_inicio, h.hora_fin FROM deporte d INNER JOIN horario h ON d.id = h.id_deporte INNER JOIN profesor p ON d.id_profesor = p.id ORDER BY d.nombre";
+  $sql = "SELECT d.id, d.nombre, d.tipo, p.nombre, p.a_paterno, h.dia, h.hora_inicio, h.hora_fin FROM deporte d INNER JOIN horario h ON d.id = h.id_deporte INNER JOIN profesor p ON d.id_profesor = p.id ORDER BY d.nombre";
   $resultado = $conectar->query($sql);
 ?>
 
@@ -46,14 +46,14 @@
         <tbody>
           <?php while($row = $resultado->fetch_array(MYSQLI_ASSOC)) { ?>
             <tr>
-              <td><?php echo $row['d.id']; ?></td>
-              <td><?php echo $row['d.nombre']; ?></td>
-              <td><?php echo $row['d.tipo']; ?></td>
-              <td><?php echo $row['p.nombre']; ?></td>
-              <td><?php echo $row['p.a_paterno']; ?></td>
-              <td><?php echo $row['h.dia']; ?></td>
-              <td><?php echo $row['h.hora_inicio']; ?></td>
-              <td><?php echo $row['h.hora_fin']; ?></td>
+              <td><?php echo $row['id']; ?></td>
+              <td><?php echo $row['nombre']; ?></td>
+              <td><?php echo $row['tipo']; ?></td>
+              <td><?php echo $row['nombre']; ?></td>
+              <td><?php echo $row['a_paterno']; ?></td>
+              <td><?php echo $row['dia']; ?></td>
+              <td><?php echo $row['hora_inicio']; ?></td>
+              <td><?php echo $row['hora_fin']; ?></td>
             </tr>
             <?php } ?>   
 <!-- 
