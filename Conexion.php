@@ -10,10 +10,7 @@
   if($conectar->connect_error){
     echo "Error en la conexion";
   }
-  else{
-  echo "Conexión Exitosa";
-  }
-  
+
   /* $conectar->close(); 
   La conexion debe permanecer abierta para las opciones de index.html*/
 ?>
