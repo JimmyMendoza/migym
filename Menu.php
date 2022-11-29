@@ -50,7 +50,7 @@ if($varsesion==null || $varsesion=''){
             <i class="fa fa-user mr-3" aria-hidden="true"></i>Perfil
           </a>
           <div id="profile-items" class="collapse" data-parent="#sidebar-accordion">
-            <a href="#" class="list-group-item list-group-item-action bg-dark text-light pl-5">
+            <a href="Perfil.html" class="list-group-item list-group-item-action bg-dark text-light pl-5">
               Alumno
             </a>
             <!-- <a href="#" class="list-group-item list-group-item-action bg-dark text-light pl-5">
