@@ -2,6 +2,14 @@
   min-height: 696px;
 }
 
+.bad {
+  text-align: center;
+  width: 100%;
+  padding: 12px;
+  background-color: #a22;
+  color: #fff
+}
+
 .u-section-1 .u-layout-wrap-1 {
   margin-top: 60px;
   margin-bottom: 60px;
