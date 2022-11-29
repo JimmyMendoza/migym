@@ -1,3 +1,16 @@
+<?php
+//SEGURIDAD DE INICIO DE SESION
+session_start();
+error_reporting(0);
+$varsesion= $_SESSION['cuenta'];
+if($varsesion==null || $varsesion==''){
+  echo "No tiene Autorización";
+  die();
+}
+
+?>
+
+
 <!doctype html>
 <html lang="en">
 
@@ -37,7 +50,7 @@
             <i class="fa fa-user mr-3" aria-hidden="true"></i>Perfil
           </a>
           <div id="profile-items" class="collapse" data-parent="#sidebar-accordion">
-            <a href="Perfil.html" class="list-group-item list-group-item-action bg-dark text-light pl-5">
+            <a href="#" class="list-group-item list-group-item-action bg-dark text-light pl-5">
               Alumno
             </a>
             <!-- <a href="#" class="list-group-item list-group-item-action bg-dark text-light pl-5">
@@ -49,7 +62,7 @@
             <i class="fa fa-tachometer mr-3" aria-hidden="true"></i>Inscripción
           </a>
           <div id="dashboard-items" class="collapse" data-parent="#sidebar-accordion">
-            <a href="Inscripción.html" class="list-group-item list-group-item-action bg-dark text-light pl-5">
+            <a href="#" class="list-group-item list-group-item-action bg-dark text-light pl-5">
               Registrar Inscripción
             </a>
             <a href="#" class="list-group-item list-group-item-action bg-dark text-light pl-5">
@@ -74,7 +87,7 @@
               </a>
             </div>
           </div>
-          <a href="#" class="list-group-item list-group-item-action bg-dark text-light">
+          <a href="cerrar_sesion.php" class="list-group-item list-group-item-action bg-dark text-light">
             <i class="fa fa-shopping-cart mr-3" aria-hidden="true"></i>Cerrar Sesión
           </a>
         </div>
@@ -94,7 +107,7 @@
                 <a class="nav-link" href="https://www.cuautitlan.unam.mx/deporte/instalaciones.html">Instalaciones<span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="Horarios.php">Horarios</a>
+                <a class="nav-link" href="#">Horarios</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Sitios de Interés</a>

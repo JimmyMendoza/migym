@@ -2,6 +2,8 @@
 include('Conexion.php');
 $cuenta=$_POST['cuenta'];
 $contrase=$_POST['contrase'];
+session_start();
+$_SESSION['cuenta']=$cuenta;
 
 
 
@@ -12,7 +14,7 @@ $filas=mysqli_num_rows($resultado);
 
 if($filas){
   
-    header("location:Menu.html");
+    header("location:Menu.php");
 
 }else{
     ?>
