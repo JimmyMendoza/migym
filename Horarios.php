@@ -1,6 +1,6 @@
 <?php
   require 'Conexion.php';
-  $sql = "SELECT d.id, d.nombre_deporte, d.tipo, p.nombre, p.a_paterno, h.dia, h.hora_inicio, h.hora_fin FROM deporte d INNER JOIN horario h ON d.id = h.id_deporte INNER JOIN profesor p ON d.id_profesor = p.id ORDER BY d.nombre_deporte";
+  $sql = "SELECT d.id, d.nombre as 'deporte_nombre', d.tipo, p.nombre, p.a_paterno, h.dia, h.hora_inicio, h.hora_fin FROM deporte d INNER JOIN horario h ON d.id = h.id_deporte INNER JOIN profesor p ON d.id_profesor = p.id ORDER BY d.nombre";
   $resultado = $conectar->query($sql);
 ?>
 
@@ -47,7 +47,7 @@
           <?php while($row = $resultado->fetch_array(MYSQLI_ASSOC)) { ?>
             <tr>
               <td><?php echo $row['id']; ?></td>
-              <td><?php echo $row['nombre_deporte']; ?></td>
+              <td><?php echo $row['deporte_nombre']; ?></td>
               <td><?php echo $row['tipo']; ?></td>
               <td><?php echo $row['nombre']; ?></td>
               <td><?php echo $row['a_paterno']; ?></td>
