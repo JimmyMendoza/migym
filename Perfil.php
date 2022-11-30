@@ -56,19 +56,19 @@ if ($resultado){
         </div>
         <div class="perfil-usuario-body">
             <div class="perfil-usuario-bio">
-                <h3 class="titulo"><?php echo $nombre; ?></h3>
+                <h3 class="titulo"><?php echo $nombre;?> <?php echo $a_paterno;?> <?php echo $a_materno;?></h3>
 
 
                 <p class="texto">Facultad de Estudios Superiores Cuautitlán, UNAM</p>
             </div>
             <div class="perfil-usuario-footer">
                 <ul class="lista-datos">
-                    <li><i class="icono fas fa-map-signs"></i> No. Cuenta</li>
-                    <li><i class="icono fas fa-briefcase"></i>Estudiante</li>
+                    <li><i class="icono fas fa-map-signs"></i> No. Cuenta : <?php echo $cuenta;?></li>
+                    <li><i class="icono fas fa-briefcase"></i> Estudiante</li>
                 </ul>
                 <ul class="lista-datos">
-                    <li><i class="icono fas fa-phone-alt"></i> Telefono:</li>
-                    <li><i class="icono fas fa-user-check"></i> E-Mail</li>
+                    <li><i class="icono fas fa-phone-alt"></i> Telefono : <?php echo $telefono;?></li>
+                    <li><i class="icono fas fa-user-check"></i> E-Mail : <?php echo $correo;?></li>
                 </ul>
             </div>
             <div class="redes-sociales">
