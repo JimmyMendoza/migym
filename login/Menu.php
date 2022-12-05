@@ -1,3 +1,16 @@
+<?php
+//SEGURIDAD DE INICIO DE SESION
+session_start();
+error_reporting(0);
+$varsesion= $_SESSION['cuenta'];
+if($varsesion==null || $varsesion=''){
+  echo "No tiene Autorización";
+  die();
+}
+
+?>
+
+
 <!doctype html>
 <html lang="en">
 
@@ -12,6 +25,12 @@
 
   <title>Menu</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="nicepage.css" media="screen">
+
+    <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
+    <meta name="generator" content="Nicepage 5.0.7, nicepage.com">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
   <link rel="stylesheet" href="styles.css">
   <style>
     #sidebar {
@@ -20,19 +39,18 @@
       background: #343a40;
     }
   </style>
-</head>
-
+</script>
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:title" content="Header and footer">
+    <meta property="og:type" content="website">
+  </head>
 <body>
-  <div class="d-flex">
     
+  <div class="d-flex">
     <div id="sidebar">
       <div class="p-2">
-        <br>
-        <A HREF="Menu.php"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
-          <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>
-        </svg></A>
         <a href="#" class="navbar-brand text-center text-light w-100 p-4 border-bottom">
-          MI GYM
+          MI GYM  
         </a>
       </div>
       <div id="sidebar-accordion" class="accordion">
@@ -42,8 +60,8 @@
             <i class="fa fa-user mr-3" aria-hidden="true"></i>Perfil
           </a>
           <div id="profile-items" class="collapse" data-parent="#sidebar-accordion">
-            <a href="PerfilAdministrador.html" class="list-group-item list-group-item-action bg-dark text-light pl-5">
-              Administrador
+            <a href="Perfil.php" class="list-group-item list-group-item-action bg-dark text-light pl-5">
+              Alumno
             </a>
             <!-- <a href="#" class="list-group-item list-group-item-action bg-dark text-light pl-5">
               Item 2
@@ -54,11 +72,11 @@
             <i class="fa fa-tachometer mr-3" aria-hidden="true"></i>Inscripción
           </a>
           <div id="dashboard-items" class="collapse" data-parent="#sidebar-accordion">
-            <a href="ValidarInscripción.html" class="list-group-item list-group-item-action bg-dark text-light pl-5">
-              Validar Inscripción
+            <a href="../Incripción/Inscripción.html" class="list-group-item list-group-item-action bg-dark text-light pl-5">
+              Registrar Inscripción
             </a>
-            <a href="GposProfesores.php" class="list-group-item list-group-item-action bg-dark text-light pl-5">
-              Grupos Profesores
+            <a href="#" class="list-group-item list-group-item-action bg-dark text-light pl-5">
+              Consultar Inscripción
             </a>
             <!-- <a href="#" class="list-group-item list-group-item-action bg-dark text-light pl-5">
               Item 3
@@ -99,7 +117,7 @@
                 <a class="nav-link" href="https://www.cuautitlan.unam.mx/deporte/instalaciones.html">Instalaciones<span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Horarios</a>
+                <a class="nav-link" href="../Horarios/Horarios.html">Horarios</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Sitios de Interés</a>
@@ -121,7 +139,6 @@
       </nav>
       <section class="p-3">
         <div class="container">
-          
           <div class="row">
             <div class="col-md-12">
               <h2></h2>
@@ -143,3 +160,5 @@
     integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
   </script>
 </body>
+
+
