@@ -54,8 +54,8 @@ if($varsesion==null || $varsesion=''){
             <i class="fa fa-user mr-3" aria-hidden="true"></i>Perfil
           </a>
           <div id="profile-items" class="collapse" data-parent="#sidebar-accordion">
-            <a href="Perfil.php" class="list-group-item list-group-item-action bg-dark text-light pl-5">
-              Alumno
+            <a href="PerfilAdministrador.php" class="list-group-item list-group-item-action bg-dark text-light pl-5">
+              Administrador
             </a>
             <!-- <a href="#" class="list-group-item list-group-item-action bg-dark text-light pl-5">
               Item 2
@@ -66,11 +66,11 @@ if($varsesion==null || $varsesion=''){
             <i class="fa fa-tachometer mr-3" aria-hidden="true"></i>Inscripción
           </a>
           <div id="dashboard-items" class="collapse" data-parent="#sidebar-accordion">
-            <a href="#" class="list-group-item list-group-item-action bg-dark text-light pl-5">
-              Registrar Inscripción
+            <a href="ValidarInscripción.html" class="list-group-item list-group-item-action bg-dark text-light pl-5">
+              Validar Inscripción
             </a>
-            <a href="#" class="list-group-item list-group-item-action bg-dark text-light pl-5">
-              Consultar Inscripción
+            <a href="GposProfesores.php" class="list-group-item list-group-item-action bg-dark text-light pl-5">
+              Grupos Profesores
             </a>
             <!-- <a href="#" class="list-group-item list-group-item-action bg-dark text-light pl-5">
               Item 3
