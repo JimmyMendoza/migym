@@ -1,6 +1,6 @@
 <?php
 session_start();
 session_destroy();
-header("location:login/MYGYM(Login).html");
+header("location:MYGYM(Login).html");
 
 ?>

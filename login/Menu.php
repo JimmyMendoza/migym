@@ -1,0 +1,164 @@
+<?php
+//SEGURIDAD DE INICIO DE SESION
+session_start();
+error_reporting(0);
+$varsesion= $_SESSION['cuenta'];
+if($varsesion==null || $varsesion=''){
+  echo "No tiene Autorización";
+  die();
+}
+
+?>
+
+
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+  <title>Menu</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="nicepage.css" media="screen">
+
+    <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
+    <meta name="generator" content="Nicepage 5.0.7, nicepage.com">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    #sidebar {
+      width: 20%;
+      height: 100vh;
+      background: #343a40;
+    }
+  </style>
+</script>
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:title" content="Header and footer">
+    <meta property="og:type" content="website">
+  </head>
+<body>
+    
+  <div class="d-flex">
+    <div id="sidebar">
+      <div class="p-2">
+        <a href="#" class="navbar-brand text-center text-light w-100 p-4 border-bottom">
+          MI GYM  
+        </a>
+      </div>
+      <div id="sidebar-accordion" class="accordion">
+        <div class="list-group">
+            <a href="#profile-items" data-toggle="collapse" aria-expanded="false"
+            class="list-group-item list-group-item-action bg-dark text-light">
+            <i class="fa fa-user mr-3" aria-hidden="true"></i>Perfil
+          </a>
+          <div id="profile-items" class="collapse" data-parent="#sidebar-accordion">
+            <a href="Perfil.php" class="list-group-item list-group-item-action bg-dark text-light pl-5">
+              Alumno
+            </a>
+            <!-- <a href="#" class="list-group-item list-group-item-action bg-dark text-light pl-5">
+              Item 2
+            </a> -->
+          </div>
+            <a href="#dashboard-items" data-toggle="collapse" aria-expanded="false"
+            class="list-group-item list-group-item-action bg-dark text-light">
+            <i class="fa fa-tachometer mr-3" aria-hidden="true"></i>Inscripción
+          </a>
+          <div id="dashboard-items" class="collapse" data-parent="#sidebar-accordion">
+            <a href="../Incripción/Inscripción.html" class="list-group-item list-group-item-action bg-dark text-light pl-5">
+              Registrar Inscripción
+            </a>
+            <a href="#" class="list-group-item list-group-item-action bg-dark text-light pl-5">
+              Consultar Inscripción
+            </a>
+            <!-- <a href="#" class="list-group-item list-group-item-action bg-dark text-light pl-5">
+              Item 3
+            </a> -->
+          </div>
+          
+          <a href="#setting-items" data-toggle="collapse" aria-expanded="false"
+            class="list-group-item list-group-item-action bg-dark text-light">
+            <i class="fa fa-cog mr-3" aria-hidden="true"></i>Ayuda
+          </a>
+          <div id="setting-items" class="collapse" data-parent="#sidebar-accordion">
+            <div class="d-flex flex-row text-center">
+              <a href="#" class="list-group-item list-group-item-action bg-dark text-light">
+                Acerca de
+              </a>
+              <a href="#" class="list-group-item list-group-item-action bg-dark text-light">
+                Manual
+              </a>
+            </div>
+          </div>
+          <a href="cerrar_sesion.php" class="list-group-item list-group-item-action bg-dark text-light">
+            <i class="fa fa-shopping-cart mr-3" aria-hidden="true"></i>Cerrar Sesión
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="content w-100">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-xl">
+          <a class="navbar-brand" href="https://www.cuautitlan.unam.mx/">FES Cuautitlán</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07XL" aria-controls="navbarsExample07XL" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+      
+          <div class="collapse navbar-collapse" id="navbarsExample07XL">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="https://www.cuautitlan.unam.mx/deporte/instalaciones.html">Instalaciones<span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../Horarios/Horarios.html">Horarios</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Sitios de Interés</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="dropdown07XL" data-toggle="dropdown" aria-expanded="false">Comunidad FESC</a>
+                <div class="dropdown-menu" aria-labelledby="dropdown07XL">
+                  <a class="dropdown-item" href="http://cuautitlan.dgae.unam.mx/">Servicios Escolares</a>
+                  <a class="dropdown-item" href="https://www.cuautitlan.unam.mx/difusion_cultural/">Difusión</a>
+                  <a class="dropdown-item" href="https://www.google.com/maps/place/Facultad+de+Estudios+Superiores+Cuautitl%C3%A1n/@19.6920852,-99.1919241,17z/data=!3m1!4b1!4m5!3m4!1s0x85d21fe02541babb:0x13d9c1b986e25ecc!8m2!3d19.6920852!4d-99.1897354">Ubicación</a>
+                </div>
+              </li>
+            </ul>
+            <!-- <form class="form-inline my-2 my-md-0">
+              <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+            </form> -->
+          </div>
+        </div>
+      </nav>
+      <section class="p-3">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <h2></h2>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+  </script>
+</body>
+
+
