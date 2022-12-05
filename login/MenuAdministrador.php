@@ -40,7 +40,7 @@ if($varsesion==null || $varsesion=''){
     <div id="sidebar">
       <div class="p-2">
       <br>
-        <A HREF="Menu.php"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
+        <A HREF="MenuAdministrador.php"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
           <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>
         </svg></A>
         <a href="#" class="navbar-brand text-center text-light w-100 p-4 border-bottom">
@@ -54,8 +54,8 @@ if($varsesion==null || $varsesion=''){
             <i class="fa fa-user mr-3" aria-hidden="true"></i>Perfil
           </a>
           <div id="profile-items" class="collapse" data-parent="#sidebar-accordion">
-            <a href="Perfil.php" class="list-group-item list-group-item-action bg-dark text-light pl-5">
-              Alumno
+            <a href="PerfilAdministrador.php" class="list-group-item list-group-item-action bg-dark text-light pl-5">
+              Administrador
             </a>
             <!-- <a href="#" class="list-group-item list-group-item-action bg-dark text-light pl-5">
               Item 2
@@ -66,11 +66,11 @@ if($varsesion==null || $varsesion=''){
             <i class="fa fa-tachometer mr-3" aria-hidden="true"></i>Inscripción
           </a>
           <div id="dashboard-items" class="collapse" data-parent="#sidebar-accordion">
-            <a href="../Incripción/Inscripción.html" class="list-group-item list-group-item-action bg-dark text-light pl-5">
-              Registrar Inscripción
+            <a href="../ValidacionInscripción/ValidarInscripción.html" class="list-group-item list-group-item-action bg-dark text-light pl-5">
+              Validar Inscripción
             </a>
-            <a href="#" class="list-group-item list-group-item-action bg-dark text-light pl-5">
-              Consultar Inscripción
+            <a href="../Grupos_profesores/GposProfesores.php" class="list-group-item list-group-item-action bg-dark text-light pl-5">
+              Grupos Profesores
             </a>
             <!-- <a href="#" class="list-group-item list-group-item-action bg-dark text-light pl-5">
               Item 3
