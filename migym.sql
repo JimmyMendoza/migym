@@ -201,10 +201,10 @@ CREATE TABLE `documento` (
   `nombre` varchar(50) NOT NULL,
   `tipo` varchar(30) NOT NULL,
   `fecha` date DEFAULT NULL,
-  `valido` tinyint(1) DEFAULT NULL,
+  `valido` tinyint(1) DEFAULT 0,
   `revisado` tinyint(1) DEFAULT 0,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -214,10 +214,15 @@ CREATE TABLE `documento` (
 LOCK TABLES `documento` WRITE;
 /*!40000 ALTER TABLE `documento` DISABLE KEYS */;
 INSERT INTO `documento` VALUES
-(1,415685848,'Credencial','PNG','2022-11-02',0,0),
-(2,515876757,'Certificado médico','PDF','2022-10-07',0,0),
-(3,415685848,'Certificado médico','PDF','2022-09-07',1,1),
-(4,615789456,'Tira de materias','PDF','2022-09-22',0,0);
+(5,430023866,'Credencial_5','pdf','2022-12-05',0,0),
+(6,430023866,'Comprobante_06','pdf','2022-12-05',0,0),
+(7,430023866,'Certificado_7','pdf','2022-12-05',0,0),
+(8,315794959,'Credencial_8','jpg','2022-12-05',0,0),
+(9,315794959,'Certificado_9','pdf','2022-12-05',0,0),
+(10,315794959,'Comprobante_10','jpg','2022-12-05',0,0),
+(11,515876757,'Comprobante_11','jpg','2022-12-05',0,0),
+(12,515876757,'Credencial_12','jpg','2022-12-05',0,0),
+(13,515876757,'Certificado_13','pdf','2022-12-05',0,0);
 /*!40000 ALTER TABLE `documento` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -402,4 +407,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-12-01  9:42:27
+-- Dump completed on 2022-12-06 14:39:15
