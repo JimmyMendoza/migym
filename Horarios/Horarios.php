@@ -1,20 +1,25 @@
+<?php
+  require 'Conexion.php';
+  $sql = "SELECT d.id, d.nombre as 'deporte_nombre', d.tipo, p.nombre, p.a_paterno, h.dia, h.hora_inicio, h.hora_fin FROM deporte d INNER JOIN horario h ON d.id = h.id_deporte INNER JOIN profesor p ON d.id_profesor = p.id ORDER BY d.nombre";
+  $resultado = $conectar->query($sql);
+?>
+
+
+
 <!DOCTYPE html>
 <html style="font-size: 16px;" lang="es"><head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <meta name="keywords" content="">
     <meta name="description" content="">
-    <title>Validar Inscripción</title>
+    <title>Header and footer</title>
     <link rel="stylesheet" href="nicepage.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
-    <link rel="stylesheet" href="estilos2.css">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-<link rel="stylesheet" href="Header-and-footer.css" media="screen">
+    <link rel="stylesheet" href="Header-and-footer.css" media="screen">
     <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
     <meta name="generator" content="Nicepage 5.0.7, nicepage.com">
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+
     
     
     <script type="application/ld+json">{
@@ -22,13 +27,13 @@
     "@type": "Organization",
     "name": "",
     "logo": "images/Mi_gym__5_-removebg-preview.png"
-}</script>
+    }</script>
     <meta name="theme-color" content="#478ac9">
     <meta property="og:title" content="Header and footer">
     <meta property="og:type" content="website">
   </head>
   <body data-home-page="Header-and-footer.html" data-home-page-title="Header and footer" class="u-body u-xl-mode" data-lang="es"><header class="u-clearfix u-header u-header" id="sec-8f91"><div class="u-clearfix u-sheet u-sheet-1">
-            <a href="https://nicepage.com" class="u-image u-logo u-image-1" data-image-width="500" data-image-height="500">
+        <a href="https://nicepage.com" class="u-image u-logo u-image-1" data-image-width="500" data-image-height="500">
           <img src="images/Mi_gym__5_-removebg-preview.png" class="u-logo-image u-logo-image-1">
         </a>
         <nav class="u-menu u-menu-one-level u-offcanvas u-menu-1">
@@ -36,128 +41,175 @@
             <a class="u-button-style u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-hover-color u-custom-text-shadow u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#">
               <svg class="u-svg-link" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use></svg>
               <svg class="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16" x="0px" y="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect>
-</g></svg>
+              </g></svg>
             </a>
           </div>
           <div class="u-custom-menu u-nav-container">
             <ul class="u-nav u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-1-base" href="#" style="padding: 10px 20px;">Acerca de</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-1-base" href="#" style="padding: 10px 20px;">Contacto</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-1-base" href="#" style="padding: 10px 20px;">Menú</a>
-</li></ul>
+            </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-1-base" href="#" style="padding: 10px 20px;">Contacto</a>
+            </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-1-base" href="#" style="padding: 10px 20px;">Menú</a>
+          </li></ul>
           </div>
           <div class="u-custom-menu u-nav-container-collapse">
             <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
               <div class="u-inner-container-layout u-sidenav-overflow">
                 <div class="u-menu-close"></div>
                 <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="#">Acerca de</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="#">Contacto</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="#">Menú</a>
-</li></ul>
+               </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="#">Contacto</a>
+               </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="#">Menú</a>
+               </li></ul>
               </div>
             </div>
             <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
           </div>
         </nav>
       </div></header>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-    <div class="container">
-      <br>
-        <A HREF="Menu.php"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
+
+    <body>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css
+    https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="estilog.css"> 
+    <main class="main">
+      <div class="container">
+        <br>
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
           <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>
-        </svg></A>
-        <h2><center><font face="Constantia">Validar Inscripción</center></font></h2>
-        <div class="mb-3 row">
-            <label for="staticEmail" class="col-sm-2 col-lg-2 col-form-label">No. Cuenta</label>
-            <div class="col-sm-10">
-              <input type="text" class="form-control" aria-describedby="basic-addon2">
-            </div>
+        </svg>
+    </main>
+<br>
+<br>
+       <h1 class="txt-1"> <center>Horarios</center></h1>
+        <div class="mb-3">
+    <div class="container mt-4">
+    <table id="example" class="table table-hover" style="width:100%">
+        <thead>
+            <tr>
+                <th><center>Clave</th>
+                <th>Actividad</th>
+                <th>Tipo</th>
+                <th>Nombre</th>
+                <th>Lunes</th>
+                <th>Martes</th>
+                <th>Miércoles</th>
+                <th>Jueves</th>
+                <th>Viernes</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr>
+                <td>112</td>
+                <td>Full Contac</td>
+                <td>Combate</td>
+                <td>Eréndira Hernandez Rojas</td>
+                <td>11:00-12:00pm</td>
+                <td></td>
+                <td>11:00-12:00pm</td>
+                <td></td>
+                <td></td>
+            </tr>
+          <tr>
+            <td>114</td>
+            <td>Karate y Kendo</td>
+            <td>Combate</td>
+            <td>Vidal Briones Garcia</td>
+            <td></td>
+            <td>9:00-3:00pm</td>
+            <td></td>
+            <td>9:00-3:00pm</td>
+            <td></td>
+        </tr>
+        <tr>
+          <td>113</td>
+          <td>Kick Boxing</td>
+          <td>Combate</td>
+          <td>Juan Pablo Romero Flores</td>
+          <td>8:00-10:00am</td>
+          <td></td>
+          <td>8:00-10:00am</td>
+          <td></td>
+          <td>8:00-10:00am</td>
+      </tr>
+        <tr>
+          <td>115</td>
+          <td>Tae Kwon Do</td>
+          <td>Combate</td>
+          <td>Juan Carlos Cruz Altamirano</td>
+          <td>12:00-6:00pm</td>
+          <td></td>
+          <td>12:00-6:00pm</td>
+          <td></td>
+          <td>12:00-5:00pm</td>
+      </tr>
+      <tr>
+        <td>115</td>
+        <td>Tae Kwon Do</td>
+        <td>Combate</td>
+        <td>Juan Carlos Cruz Altamirano</td>
+        <td></td>
+        <td>2:30-6:00pm</td>
+        <td></td>
+        <td>2:30-6:00pm</td>
+        <td></td>
+    </tr>
+    <tr>
+    <td>116</td>
+    <td>Crossfit</td>
+    <td>Fitness</td>
+    <td>Hector Gonzalez Muñoz</td>
+    <td>12:00-3:00pm</td>
+    <td>2:30-4:30pm</td>
+    <td>12:00-3:00pm</td>
+    <td>2:30-4:30pm</td>
+    <td></td>
+</tr>
+<tr>
+  <td>117</td>
+  <td>Baile Deportivo</td>
+  <td>Fitness</td>
+  <td>Jeymy Cazares Arellano</td>
+  <td></td>
+  <td>2:00-4:00pm</td>
+  <td></td>
+  <td>2:00-4:00pm</td>
+  <td></td>
+</tr>            
+        </tbody>
+        <tfoot>
+          <tr>
+            <th>Clave</th>
+            <th>Actividad</th>
+            <th>Tipo</th>
+            <th>Nombre</th>
+            <th>Lunes</th>
+            <th>Martes</th>
+            <th>Miércoles</th>
+            <th>Jueves</th>
+            <th>Viernes</th>
+        </tr>
+        
+        </tfoot>
+    </table>
+       </table>
+    </div> 
+    </body>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#example').DataTable();
+        });
+    </script>
+  </body>
+</html>
+            <button type="button" class="btn btn-primary btn-sm">Entrar</button>
+            <button type="button" class="btn btn-secondary btn-sm">Registrarse</button>
         </div>
-        <div class="mb-3 row">
-          <label for="staticEmail" class="col-sm-2 col-lg-2 col-form-label">Nombre(s)</label>
-          <div class="col-sm-10">
-            <input type="text" class="form-control" aria-describedby="basic-addon2">
-          </div>
-        </div>
-        <div class="mb-3 row">
-          <label for="staticEmail" class="col-sm-2 col-lg-2 col-form-label">Apellido Paterno</label>
-          <div class="col-sm-10">
-            <input type="text" class="form-control" aria-describedby="basic-addon2">
-          </div>
-        </div>
-        <div class="mb-3 row">
-          <label for="staticEmail" class="col-sm-2 col-lg-2 col-form-label">Apellido Materno</label>
-          <div class="col-sm-10">
-            <input type="text" class="form-control" aria-describedby="basic-addon2">
-          </div>
-        </div>
-        <div class="mb-3 row">
-          <label for="staticEmail" class="col-sm-2 col-lg-2 col-form-label">Teléfono</label>
-          <div class="col-sm-10">
-            <input type="text" class="form-control" aria-describedby="basic-addon2">
-          </div>
-      </div>
-      <div class="mb-3 row">
-        <label for="staticEmail" class="col-sm-2 col-lg-2 col-form-label">E-Mail</label>
-        <div class="col-sm-10">
-          <input type="text" class="form-control" aria-describedby="basic-addon2">
-        </div>
-      </div>
-      <div class="mb-3 row">
-        <label for="staticEmail" class="col-sm-2 col-lg-2 col-form-label">Credencial Escolar</label>
-        <div class="col-sm-10">
-          <button type="button" class="btn-animado animacion-cuatro color-instagram">
-            <i class="fab fa-instagram"></i>
-            <span class="tex-icono">
-                Credencial Escolar.pdf
-            </span>
-        </button>
-              <input type="radio" name="Status1" id="Aprobado">
-              <label for="Aprobado">Aprobado</label>
-              <input type="radio" name="Status1" id="Rechazado">
-              <label for="Rechazado">Rechazado</label>
-        </div>
-      </div>
-      <div class="mb-3 row">
-        <label for="staticEmail" class="col-sm-2 col-lg-2 col-form-label">Certificado Médico</label>
-        <div class="col-sm-10">
-          <button type="button" class="btn-animado animacion-dos">
-            <i class="fas fa-arrow-alt-circle-up"></i>
-            <span class="tex-icono">
-                Certificado Médico
-            </span>
-        </button>
-              <input type="radio" name="Status2" id="Aprobado">
-              <label for="Aprobado">Aprobado</label>
-              <input type="radio" name="Status2" id="Rechazado">
-              <label for="Rechazado">Rechazado</label>
-        </div>
-      </div>
-      <div class="mb-3 row">
-        <label for="staticEmail" class="col-sm-2 col-lg-2 col-form-label">Comprobante de Inscripción</label>
-        <div class="col-sm-10">
-          <button type="button" class="btn-animado animacion-uno">
-            <i class="fas fa-arrow-alt-circle-down"></i>
-            <span class="tex-icono">
-                Comprobante de Inscripción
-            </span>
-        </button>
-              <input type="radio" name="Status3" id="Aprobado">
-              <label for="Aprobado">Aprobado</label>
-              <input type="radio" name="Status3" id="Rechazado">
-              <label for="Rechazado">Rechazado</label>
-        </div>
-        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-          <button class="btn btn-primary me-md-2" type="button">Validar Inscripción</button>
-          
-        </div>
-      </div>
     </div>  
-
-
-    <section class="u-clearfix u-section-1" id="sec-33cf">
-      <div class="u-clearfix u-sheet u-sheet-1"></div>
-    </section>
-    
+  </body>
     
     
     <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-431f"><div class="u-clearfix u-sheet u-sheet-1">
