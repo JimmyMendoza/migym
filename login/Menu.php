@@ -66,7 +66,7 @@ if($varsesion==null || $varsesion=''){
             <i class="fa fa-tachometer mr-3" aria-hidden="true"></i>Inscripción
           </a>
           <div id="dashboard-items" class="collapse" data-parent="#sidebar-accordion">
-            <a href="../Incripción/Inscripción.html" class="list-group-item list-group-item-action bg-dark text-light pl-5">
+            <a href="../Incripción/Inscripción.php" class="list-group-item list-group-item-action bg-dark text-light pl-5">
               Registrar Inscripción
             </a>
             <a href="#" class="list-group-item list-group-item-action bg-dark text-light pl-5">

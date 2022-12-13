@@ -6,11 +6,33 @@ session_start();
 $_SESSION['cuenta']=$cuenta;
 
 
+$sanitized_userid = 
+    mysqli_real_escape_string($conectar, $cuenta);
+      
+$sanitized_password = 
+    mysqli_real_escape_string($conectar, $contrase);
 
-$consulta="SELECT * FROM alumno where cuenta='$cuenta' and contrase='$contrase'";
+$sanitized_useradmin = 
+    mysqli_real_escape_string($conectar, $cuenta);
+      
+$sanitized_passwordadmin = 
+    mysqli_real_escape_string($conectar, $contrase);
+
+
+
+$consulta = "SELECT * FROM alumno WHERE cuenta = '" 
+    . $sanitized_userid . "' AND contrase = '" 
+    . $sanitized_password . "'";
+
+/*$consulta="SELECT * FROM alumno where cuenta='$sanitized_userid' and contrase='$'";*/
 $resultado=mysqli_query($conectar,$consulta);
 
-$consultaadmin="SELECT * FROM admin where id='$cuenta' and contrase='$contrase'";
+
+$consultaadmin = "SELECT * FROM admin WHERE id = '" 
+    . $sanitized_useradmin . "' AND contrase = '" 
+    . $sanitized_passwordadmin . "'";
+
+/*$consultaadmin="SELECT * FROM admin where id='$cuenta' and contrase='$contrase'";*/
 $resultadoadmin=mysqli_query($conectar,$consultaadmin);
 
 $filas=mysqli_num_rows($resultado);
