@@ -12,7 +12,7 @@
     <meta charset="utf-8">
     <meta name="keywords" content="">
     <meta name="description" content="">
-    <title>Header and footer</title>
+    <title>Horarios</title>
     <link rel="stylesheet" href="nicepage.css" media="screen">
     <link rel="stylesheet" href="Header-and-footer.css" media="screen">
     <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
@@ -90,92 +90,25 @@
                 <th>Actividad</th>
                 <th>Tipo</th>
                 <th>Nombre</th>
-                <th>Lunes</th>
-                <th>Martes</th>
-                <th>Miércoles</th>
-                <th>Jueves</th>
-                <th>Viernes</th>
+                <th>A. Paterno</th>
+                <th>Día</th>
+                <th>Hora Inicio</th>
+                <th>Hora Fin</th>
             </tr>
         </thead>
         <tbody>
-
+          <?php while($row = $resultado->fetch_array(MYSQLI_ASSOC)) { ?>
             <tr>
-                <td>112</td>
-                <td>Full Contac</td>
-                <td>Combate</td>
-                <td>Eréndira Hernandez Rojas</td>
-                <td>11:00-12:00pm</td>
-                <td></td>
-                <td>11:00-12:00pm</td>
-                <td></td>
-                <td></td>
+              <td><?php echo $row['id']; ?></td>
+              <td><?php echo $row['deporte_nombre']; ?></td>
+              <td><?php echo $row['tipo']; ?></td>
+              <td><?php echo $row['nombre']; ?></td>
+              <td><?php echo $row['a_paterno']; ?></td>
+              <td><?php echo $row['dia']; ?></td>
+              <td><?php echo $row['hora_inicio']; ?></td>
+              <td><?php echo $row['hora_fin']; ?></td>
             </tr>
-          <tr>
-            <td>114</td>
-            <td>Karate y Kendo</td>
-            <td>Combate</td>
-            <td>Vidal Briones Garcia</td>
-            <td></td>
-            <td>9:00-3:00pm</td>
-            <td></td>
-            <td>9:00-3:00pm</td>
-            <td></td>
-        </tr>
-        <tr>
-          <td>113</td>
-          <td>Kick Boxing</td>
-          <td>Combate</td>
-          <td>Juan Pablo Romero Flores</td>
-          <td>8:00-10:00am</td>
-          <td></td>
-          <td>8:00-10:00am</td>
-          <td></td>
-          <td>8:00-10:00am</td>
-      </tr>
-        <tr>
-          <td>115</td>
-          <td>Tae Kwon Do</td>
-          <td>Combate</td>
-          <td>Juan Carlos Cruz Altamirano</td>
-          <td>12:00-6:00pm</td>
-          <td></td>
-          <td>12:00-6:00pm</td>
-          <td></td>
-          <td>12:00-5:00pm</td>
-      </tr>
-      <tr>
-        <td>115</td>
-        <td>Tae Kwon Do</td>
-        <td>Combate</td>
-        <td>Juan Carlos Cruz Altamirano</td>
-        <td></td>
-        <td>2:30-6:00pm</td>
-        <td></td>
-        <td>2:30-6:00pm</td>
-        <td></td>
-    </tr>
-    <tr>
-    <td>116</td>
-    <td>Crossfit</td>
-    <td>Fitness</td>
-    <td>Hector Gonzalez Muñoz</td>
-    <td>12:00-3:00pm</td>
-    <td>2:30-4:30pm</td>
-    <td>12:00-3:00pm</td>
-    <td>2:30-4:30pm</td>
-    <td></td>
-</tr>
-<tr>
-  <td>117</td>
-  <td>Baile Deportivo</td>
-  <td>Fitness</td>
-  <td>Jeymy Cazares Arellano</td>
-  <td></td>
-  <td>2:00-4:00pm</td>
-  <td></td>
-  <td>2:00-4:00pm</td>
-  <td></td>
-</tr>            
+            <?php } ?> 
         </tbody>
         <tfoot>
           <tr>

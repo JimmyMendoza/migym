@@ -111,7 +111,7 @@ if($varsesion==null || $varsesion=''){
                 <a class="nav-link" href="https://www.cuautitlan.unam.mx/deporte/instalaciones.html">Instalaciones<span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="../Horarios/Horarios.html">Horarios</a>
+                <a class="nav-link" href="../Horarios/Horarios.php">Horarios</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Sitios de Interés</a>
