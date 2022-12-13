@@ -69,9 +69,6 @@ if($varsesion==null || $varsesion=''){
             <a href="../Incripción/Inscripción.php" class="list-group-item list-group-item-action bg-dark text-light pl-5">
               Registrar Inscripción
             </a>
-            <a href="#" class="list-group-item list-group-item-action bg-dark text-light pl-5">
-              Consultar Inscripción
-            </a>
             <!-- <a href="#" class="list-group-item list-group-item-action bg-dark text-light pl-5">
               Item 3
             </a> -->

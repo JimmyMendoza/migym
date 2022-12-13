@@ -5,14 +5,13 @@
 ?>
 
 
-
 <!DOCTYPE html>
 <html style="font-size: 16px;" lang="es"><head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <meta name="keywords" content="">
     <meta name="description" content="">
-    <title>Header and footer</title>
+    <title>Horarios</title>
     <link rel="stylesheet" href="nicepage.css" media="screen">
     <link rel="stylesheet" href="Header-and-footer.css" media="screen">
     <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
@@ -29,7 +28,7 @@
     "logo": "images/Mi_gym__5_-removebg-preview.png"
     }</script>
     <meta name="theme-color" content="#478ac9">
-    <meta property="og:title" content="Header and footer">
+    <meta property="og:title" content="Horarios">
     <meta property="og:type" content="website">
   </head>
   <body data-home-page="Header-and-footer.html" data-home-page-title="Header and footer" class="u-body u-xl-mode" data-lang="es"><header class="u-clearfix u-header u-header" id="sec-8f91"><div class="u-clearfix u-sheet u-sheet-1">
@@ -77,6 +76,8 @@
         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
         </svg>
     </main>
+<br>
+<br>
        <h2 class="txt-1"> <center>HORARIOS</center></h2>
         <div class="mb-3">
     <div class="container mt-4">
@@ -87,92 +88,26 @@
                 <th>Actividad</th>
                 <th>Tipo</th>
                 <th>Nombre</th>
-                <th>Lunes</th>
-                <th>Martes</th>
-                <th>Miércoles</th>
-                <th>Jueves</th>
-                <th>Viernes</th>
+                <th>A. Paterno</th>
+                <th>Día</th>
+                <th>Hora Inicio</th>
+                <th>Hora Fin</th>
             </tr>
         </thead>
         <tbody>
-
+          <?php while($row = $resultado->fetch_array(MYSQLI_ASSOC)) { ?>
             <tr>
-                <td>112</td>
-                <td>Full Contac</td>
-                <td>Combate</td>
-                <td>Eréndira Hernandez Rojas</td>
-                <td>11:00-12:00pm</td>
-                <td></td>
-                <td>11:00-12:00pm</td>
-                <td></td>
-                <td></td>
+              <td><?php echo $row['id']; ?></td>
+              <td><?php echo $row['deporte_nombre']; ?></td>
+              <td><?php echo $row['tipo']; ?></td>
+              <td><?php echo $row['nombre']; ?></td>
+              <td><?php echo $row['a_paterno']; ?></td>
+              <td><?php echo $row['dia']; ?></td>
+              <td><?php echo $row['hora_inicio']; ?></td>
+              <td><?php echo $row['hora_fin']; ?></td>
             </tr>
-          <tr>
-            <td>114</td>
-            <td>Karate y Kendo</td>
-            <td>Combate</td>
-            <td>Vidal Briones Garcia</td>
-            <td></td>
-            <td>9:00-3:00pm</td>
-            <td></td>
-            <td>9:00-3:00pm</td>
-            <td></td>
-        </tr>
-        <tr>
-          <td>113</td>
-          <td>Kick Boxing</td>
-          <td>Combate</td>
-          <td>Juan Pablo Romero Flores</td>
-          <td>8:00-10:00am</td>
-          <td></td>
-          <td>8:00-10:00am</td>
-          <td></td>
-          <td>8:00-10:00am</td>
-      </tr>
-        <tr>
-          <td>115</td>
-          <td>Tae Kwon Do</td>
-          <td>Combate</td>
-          <td>Juan Carlos Cruz Altamirano</td>
-          <td>12:00-6:00pm</td>
-          <td></td>
-          <td>12:00-6:00pm</td>
-          <td></td>
-          <td>12:00-5:00pm</td>
-      </tr>
-      <tr>
-        <td>115</td>
-        <td>Tae Kwon Do</td>
-        <td>Combate</td>
-        <td>Juan Carlos Cruz Altamirano</td>
-        <td></td>
-        <td>2:30-6:00pm</td>
-        <td></td>
-        <td>2:30-6:00pm</td>
-        <td></td>
-    </tr>
-    <tr>
-    <td>116</td>
-    <td>Crossfit</td>
-    <td>Fitness</td>
-    <td>Hector Gonzalez Muñoz</td>
-    <td>12:00-3:00pm</td>
-    <td>2:30-4:30pm</td>
-    <td>12:00-3:00pm</td>
-    <td>2:30-4:30pm</td>
-    <td></td>
-</tr>
-<tr>
-  <td>117</td>
-  <td>Baile Deportivo</td>
-  <td>Fitness</td>
-  <td>Jeymy Cazares Arellano</td>
-  <td></td>
-  <td>2:00-4:00pm</td>
-  <td></td>
-  <td>2:00-4:00pm</td>
-  <td></td>
-</tr>            
+            <?php } ?>   
+           
         </tbody>
         <tfoot>
           <tr>
@@ -180,16 +115,14 @@
             <th>Actividad</th>
             <th>Tipo</th>
             <th>Nombre</th>
-            <th>Lunes</th>
-            <th>Martes</th>
-            <th>Miércoles</th>
-            <th>Jueves</th>
-            <th>Viernes</th>
+            <th>A. Paterno</th>
+            <th>Día</th>
+            <th>Hora Inicio</th>
+            <th>Hora Fin</th>
         </tr>
         
         </tfoot>
     </table>
-       </table>
     </div> 
     </body>
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
@@ -202,11 +135,14 @@
     </script>
   </body>
 </html>
-            <button type="button" class="btn btn-primary btn-sm">Entrar</button>
-            <button type="button" class="btn btn-secondary btn-sm">Registrarse</button>
+            <a href="../login/Menu.php" type="nav-link" class="btn btn-primary btn-sm">MENÚ</a>
+            <a href="../Incripción/Inscripción.html" type="nav-link" class="btn btn-secondary btn-sm">REGISTRARSE</a>
         </div>
     </div>  
-  </body>
+
+    <section class="u-clearfix u-section-1" id="sec-33cf">
+      <div class="u-clearfix u-sheet u-sheet-1"></div>
+    </section>
     
     
     <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-431f"><div class="u-clearfix u-sheet u-sheet-1">
