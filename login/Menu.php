@@ -111,7 +111,7 @@ if($varsesion==null || $varsesion=''){
                 <a class="nav-link" href="https://www.cuautitlan.unam.mx/deporte/instalaciones.html">Instalaciones<span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="../Horarios/Horarios.html">Horarios</a>
+                <a class="nav-link" href="../Horarios/Horarios.php">Horarios</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Sitios de Interés</a>
@@ -125,23 +125,21 @@ if($varsesion==null || $varsesion=''){
                 </div>
               </li>
             </ul>
-            <!-- <form class="form-inline my-2 my-md-0">
-              <input class="form-control" type="text" placeholder="Search" aria-label="Search">
-            </form> -->
+            <div class="Contenedor">
+              <div class="Carrusel">
+              <div class="Img"><span>Cross Fit</span></div>
+              <div class="Img"><span>Full Contac</span></div>
+              <div class="Img"><span>Cross Fit</span></div>
+              <div class="Img"><span>Karate</span></div>
+              <div class="Img"><span>Kick Boxing</span></div>
+              <div class="Img"><span>Kendo</span></div>
+              <div class="Img"><span>Karate</span></div>
+              <div class="Img"><span>Baile Deportivo</span></div>
+              <div class="Img"><span>GYM</span></div>
+              </div>
           </div>
-        </div>
-      </nav>
-      <section class="p-3">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12">
-              <h2></h2>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
-  </div>
+
+
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

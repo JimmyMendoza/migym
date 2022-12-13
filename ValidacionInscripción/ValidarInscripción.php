@@ -1,4 +1,19 @@
+<?php
+  require 'Conexion.php';
 
+  $where = "";
+  if(!empty($_POST))
+  {
+    $valor = $_POST['campo'];
+    if(!empty($valor)){
+      $where = "WHERE cuenta LIKE '%$valor%'";
+    }
+  }
+  //$sql = "SELECT * FROM alumno $where"
+  $sql = "SELECT d.id, d.cuenta_alumno, a.nombre, a.a_paterno, a.a_materno, d.valido, d.revisado FROM documento d INNER JOIN alumno a ON d.cuenta_alumno= a.cuenta WHERE revisado=0 GROUP BY d.cuenta_alumno"; 
+
+  $resultado=mysqli_query($conectar,$sql);
+?>
 
 <!DOCTYPE html>
 <html style="font-size: 16px;" lang="es"><head>
@@ -69,91 +84,48 @@
         <A HREF="../login/MenuAdministrador.php"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
           <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>
         </svg></A>
-        <h2><center><font face="Constantia">Validar Inscripción</center></font></h2>
-        <div class="mb-3 row">
-            <label for="staticEmail" class="col-sm-2 col-lg-2 col-form-label">No. Cuenta</label>
-            <div class="col-sm-10">
-              <input type="text" class="form-control" aria-describedby="basic-addon2">
-            </div>
-        </div>
-        <div class="mb-3 row">
-          <label for="staticEmail" class="col-sm-2 col-lg-2 col-form-label">Nombre(s)</label>
-          <div class="col-sm-10">
-            <input type="text" class="form-control" aria-describedby="basic-addon2">
-          </div>
-        </div>
-        <div class="mb-3 row">
-          <label for="staticEmail" class="col-sm-2 col-lg-2 col-form-label">Apellido Paterno</label>
-          <div class="col-sm-10">
-            <input type="text" class="form-control" aria-describedby="basic-addon2">
-          </div>
-        </div>
-        <div class="mb-3 row">
-          <label for="staticEmail" class="col-sm-2 col-lg-2 col-form-label">Apellido Materno</label>
-          <div class="col-sm-10">
-            <input type="text" class="form-control" aria-describedby="basic-addon2">
-          </div>
-        </div>
-        <div class="mb-3 row">
-          <label for="staticEmail" class="col-sm-2 col-lg-2 col-form-label">Teléfono</label>
-          <div class="col-sm-10">
-            <input type="text" class="form-control" aria-describedby="basic-addon2">
-          </div>
-      </div>
-      <div class="mb-3 row">
-        <label for="staticEmail" class="col-sm-2 col-lg-2 col-form-label">E-Mail</label>
-        <div class="col-sm-10">
-          <input type="text" class="form-control" aria-describedby="basic-addon2">
-        </div>
-      </div>
-      <div class="mb-3 row">
-        <label for="staticEmail" class="col-sm-2 col-lg-2 col-form-label">Credencial Escolar</label>
-        <div class="col-sm-10">
-          <button type="button" class="btn-animado animacion-cuatro color-instagram">
-            <i class="fab fa-instagram"></i>
-            <span class="tex-icono">
-                Credencial Escolar.pdf
-            </span>
-        </button>
-              <input type="radio" name="Status1" id="Aprobado">
-              <label for="Aprobado">Aprobado</label>
-              <input type="radio" name="Status1" id="Rechazado">
-              <label for="Rechazado">Rechazado</label>
-        </div>
-      </div>
-      <div class="mb-3 row">
-        <label for="staticEmail" class="col-sm-2 col-lg-2 col-form-label">Certificado Médico</label>
-        <div class="col-sm-10">
-          <button type="button" class="btn-animado animacion-dos">
-            <i class="fas fa-arrow-alt-circle-up"></i>
-            <span class="tex-icono">
-                Certificado Médico
-            </span>
-        </button>
-              <input type="radio" name="Status2" id="Aprobado">
-              <label for="Aprobado">Aprobado</label>
-              <input type="radio" name="Status2" id="Rechazado">
-              <label for="Rechazado">Rechazado</label>
-        </div>
-      </div>
-      <div class="mb-3 row">
-        <label for="staticEmail" class="col-sm-2 col-lg-2 col-form-label">Comprobante de Inscripción</label>
-        <div class="col-sm-10">
-          <button type="button" class="btn-animado animacion-uno">
-            <i class="fas fa-arrow-alt-circle-down"></i>
-            <span class="tex-icono">
-                Comprobante de Inscripción
-            </span>
-        </button>
-              <input type="radio" name="Status3" id="Aprobado">
-              <label for="Aprobado">Aprobado</label>
-              <input type="radio" name="Status3" id="Rechazado">
-              <label for="Rechazado">Rechazado</label>
-        </div>
-        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-          <button class="btn btn-primary me-md-2" type="button">Validar Inscripción</button>
+        <h2><center><font face="Constantia">CONSULTAR DATOS DE ALUMNO</center></font></h2>
+          <form action="<?php $_SERVER['PHP_SELF']; ?>" method="POST">
+          <b>Nombre: </b><input type="text" id="campo" name="campo" />
+          <input type="submit" id="enviar" name="enviar" value="Buscar" class="btn btn-info" />
+        </form>
+
+
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>Cuenta_alumno</th>
+              <th>Nombre</th>
+              <th>A_paterno</th>
+              <th>A_materno</th>
+              <th>Valido</th>
+              <th>Revisado</th>
+              <th></th>
+              <th></th>
+            </tr>
+          </thead>
           
-        </div>
+          <tbody>
+            <?php while($row = $resultado->fetch_array(MYSQLI_ASSOC)) { ?>
+              <tr>
+                <td><?php echo $row['id']; ?></td>
+                <td><?php echo $row['cuenta_alumno']; ?></td>
+                <td><?php echo $row['nombre']; ?></td>
+                <td><?php echo $row['a_paterno']; ?></td>
+                <td><?php echo $row['a_materno']; ?></td>
+                <td><?php echo $row['valido']; ?></td>
+                <td><?php echo $row['revisado']; ?></td>
+                <td><a class="btn btn-warning" href="modificar.php?cuenta_alumno=<?php echo $row['cuenta_alumno']; ?>">VALIDAR</a></td>
+              </tr>
+
+            <?php } ?>
+
+          </tbody>
+        </table>
+
+        
+              
       </div>
     </div>  
 
