@@ -1,3 +1,25 @@
+<?php
+  require 'Conexion.php';
+  session_start();
+  error_reporting(0);
+  $varsesion= $_SESSION['cuenta'];
+  if($varsesion==null || $varsesion=''){
+  echo "No tiene Autorización";
+  die();}
+
+  $compara = $_SESSION['cuenta'];
+
+  $sql = "SELECT nombre FROM deporte";
+  $sql2 = "SELECT concat(hora_inicio, '-', hora_fin) as horario FROM horario";
+  $sql3 = "SELECT id FROM deporte";
+  $resultado = $conectar->query($sql);
+  $resultado2 = $conectar->query($sql2);
+  $resultado3 = $conectar->query($sql3);
+  $row = $resultado->fetch_array(MYSQLI_ASSOC);
+  $row2 = $resultado2->fetch_array(MYSQLI_ASSOC);
+  $row3 = $resultado3->fetch_array(MYSQLI_ASSOC);
+?>
+
 <!DOCTYPE html>
 <html style="font-size: 16px;" lang="es"><head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -67,29 +89,24 @@
     <br>
 
         <h2><font face="Constantia"><center>Inscripción</center></font></h2>
-        <div class="row mb-3">
+                
+
+<form method="POST" action="CargarFicheros.php" enctype="multipart/form-data">
+
+<div class="row mb-3">
             <div class="col-lg-6 col-md-6 col-sm-12">
-                <select class="form-select" aria-label="Default select example">
-                    <option selected>Elegir Actividad</option>
-                    <option value="1">Karate</option>
-                    <option value="2">Tae Kwon Do</option>
-                    <option value="3">Crossfit</option>
+              <option selected>Elegir Actividad</option>
+                <select class="form-select" id="id_deporte" name="id_deporte" aria-label="Default select example">
+                 <option value="1">Soccer</option>
+                 <option value="2">Basquetball</option>
+                 <option value="3">Americano</option>
+                 <option value="4">Kick Boxing</option>
+                                  
                 </select>
             </div>     
         </div>
-        
-        <div class="row mb-3">
-            <div class="col-lg-6 col-md-6 col-sm-12">
-                <select class="form-select" aria-label="Default select example">
-                    <option selected>Elegir Horario</option>
-                    <option value="1">10:00-11:30 am</option>
-                    <option value="2">12:00-1:00 pm</option>
-                    <option value="3">4:00-5:00 pm</option>
-                </select>
-            </div>
-        </div>  
 
-<form method="POST" action="CargarFicheros.php" enctype="multipart/form-data">
+
 <div class="form-group">
               <label>Credencial Escolar (formato pdf)</label>
               <label class="btn btn-primary" for="my-file-selector"><input required="" type="file" name="file" id="exampleInputFile">
